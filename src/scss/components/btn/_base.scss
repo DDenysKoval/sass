@@ -1,0 +1,38 @@
+@use 'variables' as var;
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var.$btn-layer-spacing;
+
+  min-width: var.$btn-layer-min-width;
+  min-height: var.$btn-layer-min-height;
+  padding: var.$btn-padding-y var.$btn-padding-x;
+
+  color: var.$btn-text-color;
+  border-radius: var.$btn-layer-border-radius;
+
+  transition-property: background-color, color, box-shadow;
+  transition-duration: 300ms;
+  transition-timing-function: ease;
+
+  //normalize <button>
+  font: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  margin: 0;
+  overflow: visible;
+  cursor: pointer;
+}
+
+.btn-inner {
+  font-size: var.$btn-text-size;
+  font-weight: var.$btn-text-weight;
+  line-height: calc(var.$btn-line-height / var.$btn-text-size);
+  letter-spacing: #{calc(var.$btn-text-spacing / var.$btn-text-size)}em;
+}
+
+.btn-icon {
+  fill: currentColor;
+}

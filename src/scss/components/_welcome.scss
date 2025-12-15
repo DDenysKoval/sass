@@ -1,0 +1,41 @@
+@use '../utils/placeholders';
+@use '../utils/variables' as var;
+@use '../utils/functions' as fn;
+@use '../utils/mixins' as mx;
+
+@use 'btn/variables' as btn with (
+  $btn-layer-spacing: 4px
+);
+
+.welcome {
+  grid-area: welcome;
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+
+  @include mx.mq('md') {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  &-btn {
+    max-width: 165px;
+  }
+}
+.page-title {
+  &-accent {
+    @extend %section-title;
+
+    display: block;
+    margin-bottom: 8px;
+
+    color: fn.get-color('light-primary');
+  }
+}
+.page-title-accent {
+}
+
+.welcome-btn-icon {
+}
