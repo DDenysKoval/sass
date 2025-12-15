@@ -28,13 +28,16 @@ export default defineConfig({
     },
   ],
   build: {
-    minify: false, // disable minification
+    minify: false,
     rollupOptions: {
       input: Object.fromEntries(
         glob
           .sync(["./*.html", "./pages/**/*.html"])
           .map((file) => [
-            path.relative(__dirname, file.slice(0, file.length - path.extname(file).length)),
+            path.relative(
+              __dirname,
+              file.slice(0, file.length - path.extname(file).length)
+            ),
             fileURLToPath(new URL(file, import.meta.url)),
           ])
       ),
