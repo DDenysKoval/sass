@@ -1,12 +1,12 @@
-@use '../../utils/placeholders';
-@use '../../utils/variables' as var;
-@use '../../utils/functions' as fn;
-@use '../../utils/mixins' as mx;
+@use "../../utils/placeholders";
+@use "../../utils/variables" as var;
+@use "../../utils/functions" as fn;
+@use "../../utils/mixins" as mx;
 
 .co-workers-table {
   width: 100%;
 
-  @include mx.mq('md', 'max') {
+  @include mx.mq("md", "max") {
     display: none;
   }
 
@@ -14,7 +14,7 @@
     @extend %details;
 
     margin-bottom: 36px;
-    color: fn.get-color('light-secondary');
+    color: fn.get-color("light-secondary");
 
     span {
       @extend %accent-text;
@@ -25,10 +25,10 @@
     position: sticky;
     top: -1px;
     z-index: 100;
-    background-color: fn.get-color('dark-tertiary');
+    background-color: fn.get-color("dark-tertiary");
 
-    @include mx.mq('lg') {
-      background-color: fn.get-color('dark-secondary');
+    @include mx.mq("lg") {
+      background-color: fn.get-color("dark-secondary");
     }
 
     th {
@@ -38,10 +38,10 @@
       padding: 12px 20px;
       border-bottom-width: 1px;
 
-      color: fn.get-color('light-primary');
+      color: fn.get-color("light-primary");
 
       &::after {
-        content: '';
+        content: "";
         position: absolute;
         left: 0;
         bottom: 0;
@@ -50,10 +50,10 @@
         width: 100%;
         height: 1px;
 
-        background-color: fn.get-color('light-tertiary');
+        background-color: fn.get-color("light-tertiary");
 
-        @include mx.mq('lg') {
-          background-color: fn.get-color('dark-tertiary');
+        @include mx.mq("lg") {
+          background-color: fn.get-color("dark-tertiary");
         }
       }
 
@@ -66,7 +66,7 @@
   tbody {
     @extend %details;
 
-    color: fn.get-color('light-secondary');
+    color: fn.get-color("light-secondary");
 
     td {
       position: relative;
@@ -74,6 +74,27 @@
       padding: 16px 20px;
       vertical-align: middle;
       border-bottom-width: 1px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+
+        display: block;
+        width: 100%;
+        height: 1px;
+
+        background-color: fn.get-color("light-tertiary");
+
+        @include mx.mq("lg") {
+          background-color: fn.get-color("dark-tertiary");
+        }
+      }
+
+      &:first-child {
+        text-align: center;
+      }
     }
   }
 
